@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flix</title>
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif+Caption' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render "layouts/header" %>
+
+<% if flash[:notice] %>
+  <div class='flash notice'>
+      <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div id="wrapper">
+
+  <div id="container">
+    <section id="sidebar">
+      <%= render "layouts/sidebar" %>
+    </section>
+    <section id="content">
+      <%= yield %>
+    </section>
+  </div>
+
+</div>
+
+<%= render "layouts/footer" %>
+
+</body>
+</html>
