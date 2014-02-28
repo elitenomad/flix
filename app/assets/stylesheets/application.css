@@ -16,3 +16,7 @@
  *= require buttons
  *= require forms
 */
+
+* {
+	font-family: 'Lato', sans-serif;
+}

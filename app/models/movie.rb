@@ -1,16 +1,22 @@
 class Movie < ActiveRecord::Base
   validates :title, :released_on, :duration, presence:true
-  validates :description, length: {minimum:25}
-  validates :total_gross, numericality:{greater_than_or_equal_to: 0}
-  validates :image_file_name, allow_blank:true, format:{
-    with: /\w+.(gif|png|jpg)\z/i,
-    message: "must reference a GIF, JPG, or PNG image"
-  }
+  validates :description, length: { minimum:25 }
+  validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
+  validates :image_file_name, allow_blank:true, format: {
+      with: /\w+.(gif|png|jpg)\z/i,
+      message: "must reference a GIF, JPG, or PNG image"
+    }
 
   has_many :reviews, dependent: :destroy
 
   RATINGS = %w(G PG PG-13 R NC-17)
-  validates :rating, inclusion: {in:RATINGS}
+  validates :rating, inclusion: { in: RATINGS }
+
+  # scope :released, -> { { where("released_on <= ?", Time.now).order(released_on: :desc) } }
+  # scope :hits, -> { { where('total_gross >= 300000000').by_gross } }
+  # scope :by_gross, -> { order('total_gross desc') }
+  # scope :flops, -> { {  where('total_gross < 10000000').by_gross } }
+  # scope :recently_added, -> { {  order('created_at desc').limit(3) } }
 
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")
@@ -27,6 +33,11 @@ class Movie < ActiveRecord::Base
   def self.recently_added
     order('created_at desc').limit(3)
   end
+  
+  def flop?
+    total_gross.blank? || total_gross < 50000000
+  end
+  
   
   def flop?
     total_gross.blank? || total_gross < 50000000
