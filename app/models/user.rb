@@ -16,6 +16,6 @@ class User < ActiveRecord::Base
   # Alternate way is to use paperclip gem to allow the user
   # push their images onto your app
   def gravatar_id
-	Digest::MD5::hexdigest(email.downcase)
+	  Digest::MD5::hexdigest(email.downcase)
   end
 end

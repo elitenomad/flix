@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user, except: [:new,:create]
+  before_action :authorize_user, only: [:edit,:update,:destroy]
 	before_action :set_user, only: [:edit,:update,:destroy,:show]
 
 	def index
@@ -37,7 +39,7 @@ class UsersController < ApplicationController
 	def destroy
 		@user.destroy
     session[:user_id] = nil
-		redirect_to root_path, alert: "Successfully deleted the account!!!"
+		redirect_to root_path, notice: "Account successfully deleted!"
 	end
 
 
@@ -49,5 +51,7 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:name,:email,:password,:password_confirmation,:username)
-	end
+  end
+
+
 end

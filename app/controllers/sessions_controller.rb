@@ -17,7 +17,12 @@ class SessionsController < ApplicationController
         isValidUser = user.authenticate(userpwd)
         if isValidUser
           session[:user_id] = user.id
-          redirect_to movies_path, notice:"Successfully logged in"
+          if session[:redirect_url].nil?
+            redirect_to movies_path, notice:"Successfully logged in"
+          else
+            redirect_to session[:redirect_url], notice: "Successfully logged in"
+            session[:redirect_url] = nil
+          end
         else
           flash.now[:notice] = "Password entered is incorrect, Please try again"
           render :new
@@ -32,9 +37,5 @@ class SessionsController < ApplicationController
     redirect_to signin_path, notice:"Logged out successfully"
   end
 
-  private
 
-    def current_user
-
-    end
 end

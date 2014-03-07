@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :require_user, except: [:index,:show]
+  before_action :authorize_user, only: [:new,:create,:edit,:update,:destroy]
 	before_action :set_movie
 
 	def index
