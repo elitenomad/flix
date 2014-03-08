@@ -4,6 +4,24 @@
     <h1><%= @user.name %></h1>
     <h2><%= mail_to(@user.email) %></h2>
     <p>Member Since: <span class="text-muted"> <%= @user.created_at.strftime("%B %d %Y")%></span> </p>
+
+    <h3>Reviews</h3>
+    <% if @reviews.any? %>
+        <ol id="reviews">
+          <% @reviews.each do |review| %>
+              <li>
+                <%= link_to review.movie.title, review.movie %>
+                <span class="review"><%= pluralize(review.stars, 'star') %></span>
+                <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
+                <p>
+                  &quot;<%= review.comment %>&quot;
+                </p>
+              </li>
+          <% end %>
+        </ol>
+    <% else %>
+        <p>User didn't review a movie yet!</p>
+    <% end %>
     <p>
       <% if (current_user?(@user) || current_user_admin?) %>
       <%= link_to 'Delete Account', @user,

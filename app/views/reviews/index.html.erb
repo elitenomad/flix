@@ -1,15 +1,19 @@
 <header id="content-header">
   <h1>Reviews for <%= link_to(@movie_rev.title, @movie_rev) %></h1>
 </header>
-<ol id="reviews">
-  <% @reviews.each do |review| %>
-    <li>
-      <span class="review"><%= pluralize(review.stars, 'star') %></span>
-      <span class="user">by <%= review.name %></span>
-      <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
-      <p>
-        &quot;<%= review.comment %>&quot;
-      </p>
-    </li>
-  <% end %>
+<% if @reviews.any? %>
+    <ol id="reviews">
+      <% @reviews.each do |review| %>
+        <li>
+          <span class="review"><%= pluralize(review.stars, 'star') %></span>
+          <span class="user">by <%= link_to review.user.name, review.user %></span>
+          <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
+          <p>
+            &quot;<%= review.comment %>&quot;
+          </p>
+        </li>
+      <% end %>
+<% else %>
+    <p> No reviews added to the movie!!</p>
+<% end %>
 </ol>

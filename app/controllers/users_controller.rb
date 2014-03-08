@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
+    @reviews  =  @user.reviews
 	end
 
 	def edit
