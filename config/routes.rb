@@ -1,5 +1,7 @@
 Flix::Application.routes.draw do
 
+  resources :favourites
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"

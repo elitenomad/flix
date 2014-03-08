@@ -27,6 +27,11 @@
   <p>
     <%= format_total_gross(@movie) %>
   </p>
+
+  <h3>Fan count</h3>
+  <p>
+    <%= pluralize(@fans.count,"fan") %>
+  </p>
    <%= link_to pluralize(@movie.reviews.size, "review"), 
             movie_reviews_path(@movie) %>
   <footer>

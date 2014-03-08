@@ -22,6 +22,19 @@
     <% else %>
         <p>User didn't review a movie yet!</p>
     <% end %>
+    <h3>Favourite Movies</h3>
+
+    <% if @favourites.any? %>
+        <ol id="reviews">
+          <% @favourites.each do |favourite| %>
+              <li>
+                <%= link_to favourite.title, favourite %>
+              </li>
+          <% end %>
+        </ol>
+    <% else %>
+        <p>User have no favourite movies!</p>
+    <% end %>
     <p>
       <% if (current_user?(@user) || current_user_admin?) %>
       <%= link_to 'Delete Account', @user,
