@@ -32,6 +32,15 @@
   <p>
     <%= pluralize(@fans.count,"fan") %>
   </p>
+  <p>
+    <% if current_user %>
+        <% if @user_already_favourite %>
+            <%= button_to "Unfav", movie_favourite_path(@movie,@user_already_favourite),method: :delete %>
+        <% else%>
+            <%= button_to "Fav", movie_favourites_path(@movie) %>
+        <% end %>
+    <% end %>
+  </p>
    <%= link_to pluralize(@movie.reviews.size, "review"), 
             movie_reviews_path(@movie) %>
   <footer>
