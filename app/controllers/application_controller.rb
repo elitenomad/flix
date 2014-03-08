@@ -27,8 +27,20 @@ class ApplicationController < ActionController::Base
 
   def authorize_user
     user = User.find(params[:id])
-    unless current_user?(user)
+    unless (current_user?(user) || current_user_admin?)
       redirect_to root_path, notice: "Tampering another user details not allowed"
     end
   end
+
+  def user_admin
+    unless current_user_admin?
+      redirect_to root_url, notice: "Unauthorized access"
+    end
+  end
+
+  def current_user_admin?
+      current_user &&  current_user.admin?
+  end
+  helper_method :current_user_admin?
+  hide_action :current_user_admin?
 end

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_user, except: [:new,:create]
   before_action :authorize_user, only: [:edit,:update,:destroy]
+  before_action :user_admin, only:[:destroy]
 	before_action :set_user, only: [:edit,:update,:destroy,:show]
 
 	def index
@@ -38,7 +39,10 @@ class UsersController < ApplicationController
 
 	def destroy
 		@user.destroy
-    session[:user_id] = nil
+    # commenting out as only admin has rights to delete the user
+    # Admin user should not logout after he deletes other users
+    # account
+    # session[:user_id] = nil
 		redirect_to root_path, notice: "Account successfully deleted!"
 	end
 

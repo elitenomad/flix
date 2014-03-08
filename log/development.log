@@ -40199,3 +40199,3575 @@ Migrating to AddAdminToUsers (20140307233440)
   [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('stalin.pranava@gmail.com') AND "users"."id" != 7) LIMIT 1
   [1m[36mSQL (1.2ms)[0m  [1mUPDATE "users" SET "admin" = ?, "updated_at" = ? WHERE "users"."id" = 7[0m  [["admin", true], ["updated_at", Fri, 07 Mar 2014 23:37:16 UTC +00:00]]
   [1m[35m (1.1ms)[0m  commit transaction
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 10:42:33 +1100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 10:42:39 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"stalin.pranava@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'stalin.pranava@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/movies/5/reviews/new
+Completed 302 Found in 71ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/5/reviews/new" for 127.0.0.1 at 2014-03-08 10:42:39 +1100
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/application_controller.rb:29:in `authorize_user'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2014-03-08 10:42:48 +1100
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "7"]]
+Completed 404 Not Found in 4ms
+
+ActiveRecord::RecordNotFound (Couldn't find Movie with id=7):
+  app/controllers/movies_controller.rb:11:in `show'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:42:53.588536') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (8.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:42:53 +1100
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-03-08 10:42:57 +1100
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/application_controller.rb:29:in `authorize_user'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-03-08 10:42:57 +1100
+Processing by MoviesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/application_controller.rb:29:in `authorize_user'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:43:21.565096') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (8.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered layouts/_header.html.erb (8.6ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:43:21 +1100
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs="}
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:24 +1100
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 10:43:31 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"songster.sa@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'songster.sa@gmail.com' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'songster.sa@gmail.com' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:32 +1100
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"g.t@hp.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'g.t@hp.com' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'g.t@hp.com' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:47 +1100
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"s.p@g.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 's.p@g.com' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 's.p@g.com' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:43:56 +1100
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 10:44:16 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"s.p@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 's.p@gmail.com' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 73ms (Views: 10.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:44:17 +1100
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE (LOWER("users"."username") = LOWER('pranava') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('s.p@gmail.com') AND "users"."id" != 1) LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["password_digest", "$2a$10$wGoohsorW0u4j62CetTjautwHEAoUqr5cl1fuvVcP7WiT/Jpo.Pii"], ["updated_at", Fri, 07 Mar 2014 23:44:51 UTC +00:00]]
+  [1m[35m (1.1ms)[0m  commit transaction
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"s.p@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 's.p@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 64ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:45:02.438508') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:45:02 +1100
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-03-08 10:45:05 +1100
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :user_admin rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 10:45:05 +1100
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:45:05.533019') ORDER BY released_on desc
+  Rendered movies/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:45:05 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:45:05 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:45:05 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:45:05 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:45:05 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:45:05 +1100
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-03-08 10:45:08 +1100
+Processing by MoviesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :user_admin rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 10:45:08 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:45:08.010063') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (2.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:45:08 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:45:08 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:45:08 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:45:08 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:45:08 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:45:08 +1100
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 10:45:13 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2014-03-08 10:45:15 +1100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/edit.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-03-08 10:45:19 +1100
+Processing by MoviesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :user_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 10:45:19 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:45:19.542970') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (4.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:45:19 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:45:19 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:45:19 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:45:19 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:45:19 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:45:19 +1100
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-03-08 10:45:21 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:45:21.406421') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:45:21 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:45:21 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:45:21 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:45:21 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:45:21 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:45:21 +1100
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2014-03-08 10:45:22 +1100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/edit.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 10:47:31 +1100
+
+ActionController::RoutingError (undefined method `current_user_admin?' for ApplicationController:Class):
+  app/controllers/application_controller.rb:44:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (32.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 10:47:31 +1100
+
+ActionController::RoutingError (undefined method `current_user_admin?' for ApplicationController:Class):
+  app/controllers/application_controller.rb:44:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (29.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 10:48:01 +1100
+
+ActionController::RoutingError (undefined method `current_user_admin?' for ApplicationController:Class):
+  app/controllers/application_controller.rb:44:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/movies_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (29.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 10:49:09 +1100
+
+ActionController::RoutingError (undefined method `current_user_admin?' for ApplicationController:Class):
+  app/controllers/application_controller.rb:44:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/movies_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (31.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:51:23.485235') ORDER BY released_on desc
+  Rendered movies/index.html.erb within layouts/application (14.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (8.1ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:51:23 +1100
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 10:51:34 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2014-03-08 10:51:35 +1100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered users/_form.html.erb (3.2ms)
+  Rendered users/edit.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "user"=>{"username"=>"sp", "name"=>"sp", "email"=>"s.p@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Account", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE (LOWER("users"."username") = LOWER('sp') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('s.p@gmail.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "name" = ?, "username" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["name", "sp"], ["username", "sp"], ["updated_at", Fri, 07 Mar 2014 23:51:40 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:40 +1100
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 10:51:44 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-03-08 10:51:48 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:51:48.503018') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:51:48 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:51:48 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:51:48 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:51:48 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:51:48 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:51:48 +1100
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs="}
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:49 +1100
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"stalin.pranava@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'stalin.pranava@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 64ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:51:55.922734') ORDER BY released_on desc
+  Rendered movies/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:55 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:51:56 +1100
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-03-08 10:51:57 +1100
+Processing by MoviesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered movies/_form.html.erb (8.5ms)
+  Rendered movies/new.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2014-03-08 10:52:02 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-03-08 10:52:04 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:52:04.214369') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (3.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:52:04 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:52:04 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:52:04 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:52:04 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:52:04 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:52:04 +1100
+
+
+Started GET "/movies/6" for 127.0.0.1 at 2014-03-08 10:52:05 +1100
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35m (0.1ms)[0m  SELECT AVG("reviews"."stars") AS avg_id FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT AVG("reviews"."stars") AS avg_id FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered movies/show.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:52:05 +1100
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs="}
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:50 +1100
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"s.p@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 's.p@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 63ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:52:56.575438') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (4.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:52:56 +1100
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-03-08 10:52:58 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:52:58.600971') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:52:58 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:52:58 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:52:58 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:52:58 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:52:58 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:52:58 +1100
+
+
+Started GET "/movies/6" for 127.0.0.1 at 2014-03-08 10:52:59 +1100
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35m (0.1ms)[0m  SELECT AVG("reviews"."stars") AS avg_id FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT AVG("reviews"."stars") AS avg_id FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:52:59 +1100
+
+
+Started GET "/movies/6/reviews/new" for 127.0.0.1 at 2014-03-08 10:53:01 +1100
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/application_controller.rb:29:in `authorize_user'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/movies/6/reviews/new" for 127.0.0.1 at 2014-03-08 10:53:01 +1100
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/application_controller.rb:29:in `authorize_user'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/movies/6/reviews/new" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered reviews/_form.html.erb (6.6ms)
+  Rendered reviews/new.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 20.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:33 +1100
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs="}
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 10:54:37 +1100
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-03-08 10:54:39 +1100
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-07 23:54:39.264827') ORDER BY released_on desc
+  Rendered movies/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:54:39 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 10:54:39 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 10:54:39 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 10:54:39 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 10:54:39 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 10:54:39 +1100
+
+
+Started GET "/movies/6" for 127.0.0.1 at 2014-03-08 10:54:40 +1100
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35m (0.1ms)[0m  SELECT AVG("reviews"."stars") AS avg_id FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT AVG("reviews"."stars") AS avg_id FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?  [["movie_id", 6]]
+  Rendered movies/show.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 10:54:40 +1100
+
+
+Started GET "/movies/6/reviews/new" for 127.0.0.1 at 2014-03-08 10:54:42 +1100
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"6"}
+Redirected to http://localhost:3000/signin
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 10:54:42 +1100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 11:00:19 +1100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"stalin.pranava@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'stalin.pranava@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/movies/6/reviews/new
+Completed 302 Found in 70ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/6/reviews/new" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+Processing by ReviewsController#new as HTML
+  Parameters: {"movie_id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered reviews/_form.html.erb (3.2ms)
+  Rendered reviews/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 20.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:25 +1100
+
+
+Started GET "/users" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:30 +1100
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 11:00:32 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://localhost:3000/
+Filter chain halted as :authorize_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-08 00:00:43.140925') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 11:00:43 +1100
+
+
+Started GET "/users" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:00:54 +1100
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 11:00:57 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 11:39:59 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (wrong number of arguments (0 for 1)):
+     5:     <h2><%= mail_to(@user.email) %></h2>
+     6:     <p>Member Since: <span class="text-muted"> <%= @user.created_at.strftime("%B %d %Y")%></span> </p>
+     7:     <p>
+     8:       <% if (current_user? || current_user_admin?) %>
+     9:       <%= link_to 'Delete Account', @user,
+    10:                   method: :delete,
+    11:                   data: { confirm: 'Are you sure you want to permanently delete your account?' },
+  app/controllers/application_controller.rb:14:in `current_user?'
+  app/views/users/show.html.erb:8:in `_app_views_users_show_html_erb___2511373964095469603_70143559582560'
+
+
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/pranavaswaroop/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/arrow.png" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2014-03-08 11:40:31 +1100
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2014-03-08 11:40:35 +1100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/edit.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "user"=>{"username"=>"sp", "name"=>"sp", "email"=>"s.p@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Account", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE (LOWER("users"."username") = LOWER('sp') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('s.p@gmail.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:37 +1100
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2014-03-08 11:40:41 +1100
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE (released_on <= '2014-03-08 00:40:42.007754') ORDER BY released_on desc
+  Rendered movies/index.html.erb within layouts/application (10.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 22.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/batman-vs-godzilla.jpg" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/ironman.jpg" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/catwoman.jpg" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/spiderman.jpg" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/superman.jpg" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/assets/batman.jpg" for 127.0.0.1 at 2014-03-08 11:40:42 +1100
+
+
+Started GET "/users/7" for 127.0.0.1 at 2014-03-08 11:40:48 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/7/edit" for 127.0.0.1 at 2014-03-08 11:40:50 +1100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered shared/_errors.html.erb (0.0ms)
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/edit.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/7" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "user"=>{"username"=>"PranavaSBalugari", "name"=>"Swaroop", "email"=>"stalin.pranava@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Account", "id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE (LOWER("users"."username") = LOWER('PranavaSBalugari') AND "users"."id" != 7) LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('stalin.pranava@gmail.com') AND "users"."id" != 7) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:40:51 +1100
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs="}
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:00 +1100
+
+
+Started GET "/signin" for 127.0.0.1 at 2014-03-08 11:41:04 +1100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Cwejt4m8iehAMMRvFB5uJaiGQ7hSpwto8qd79fKGHs=", "email"=>"s.p@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 's.p@gmail.com' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 's.p@gmail.com' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_sidebar.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-08 11:41:13 +1100
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "total_gross" decimal, "created_at" datetime, "updated_at" datetime, "description" text, "released_on" date, "cast" varchar(255), "director" varchar(255), "duration" varchar(255), "image_file_name" varchar(255)) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "stars" integer, "comment" text, "movie_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.7ms)[0m  [1mCREATE INDEX "index_reviews_on_movie_id" ON "reviews" ("movie_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "password_digest" varchar(255), "created_at" datetime, "updated_at" datetime, "username" varchar(255), "admin" boolean DEFAULT 'f') 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140307233440')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121121163535')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20121121180707')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121210234158')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131213012025')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140225121828')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140305103033')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
