@@ -1,3 +1,4 @@
+<% content_for(:title, @user.name)%>
 <article id="user">
   <header>
   	<div><%= profile_image_for(@user) %></div>
@@ -22,6 +23,8 @@
     <% else %>
         <p>User didn't review a movie yet!</p>
     <% end %>
+
+    <% content_for(:side) do %>
     <h3>Favourite Movies</h3>
 
     <% if @favourites.any? %>
@@ -35,6 +38,9 @@
     <% else %>
         <p>User have no favourite movies!</p>
     <% end %>
+
+    <% end %>
+
     <p>
       <% if (current_user?(@user) || current_user_admin?) %>
       <%= link_to 'Delete Account', @user,

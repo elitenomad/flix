@@ -9,6 +9,12 @@
             <%= link_to 'Add New Movie', new_movie_path, class: 'button' %>
           </li>
       <% end %>
+
+      <li>
+        <%= content_for(:side) %>
+      </li>
     </ul>
   </nav>
+
 </aside>
+

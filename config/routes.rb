@@ -1,4 +1,6 @@
 Flix::Application.routes.draw do
+  resources :genres
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
