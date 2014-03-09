@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:edit,:update,:destroy,:show]
 
 	def index
-		@users = User.all
+		@users = User.guests
 	end
 
 	def new

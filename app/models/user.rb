@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
 
   validates :password, length: { minimum: 6, allow_blank: true }
 
+  scope :by_name, -> { order(:name)}
+  scope :guests, -> { by_name.where("admin=?",false)}
+
 
   # Idea is to just link to existing User on gravatar
   # Alternate way is to use paperclip gem to allow the user
