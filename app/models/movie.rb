@@ -1,11 +1,14 @@
 class Movie < ActiveRecord::Base
-  validates :title, :released_on, :duration, presence:true
+  validates :title, :released_on, :duration, presence:true,uniqueness: :true
+  validates :slug, uniqueness: true
   validates :description, length: { minimum:25 }
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
   validates :image_file_name, allow_blank:true, format: {
       with: /\w+.(gif|png|jpg)\z/i,
       message: "must reference a GIF, JPG, or PNG image"
     }
+
+  before_validation :generate_slug
 
   has_many :reviews, dependent: :destroy
   has_many :favourites, dependent: :destroy
@@ -52,6 +55,15 @@ class Movie < ActiveRecord::Base
 
   def average_stars
     reviews.average(:stars)
+  end
+
+  def to_param
+    #"#{self.id}-#{self.title.parameterize}"
+    slug
+  end
+
+  def generate_slug
+    self.slug ||= title.parameterize if title
   end
 
 end
