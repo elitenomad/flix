@@ -34,6 +34,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
+# uploading images
+gem 'paperclip'
+gem 'aws-sdk'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
