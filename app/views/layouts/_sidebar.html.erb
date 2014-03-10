@@ -2,7 +2,19 @@
   <nav>
     <ul>
       <li class="all-movies">
-        <%= link_to 'All Movies', movies_path, class: 'button' %>
+        <%= link_to 'All Movies', filtered_movies_path("released"), class: 'button active' %>
+      </li>
+      <li class="all-movies">
+        <%= link_to 'Hit Movies', filtered_movies_path("hits"), class: 'button' %>
+      </li>
+      <li class="all-movies">
+        <%= link_to 'Flop Movies', filtered_movies_path("flops"), class: 'button' %>
+      </li>
+      <li class="all-movies">
+        <%= link_to 'Upcoming Movies', filtered_movies_path("upcoming"), class: 'button' %>
+      </li>
+      <li class="all-movies">
+        <%= link_to 'Recent Movies', filtered_movies_path("recent"), class: 'button' %>
       </li>
       <% if current_user_admin? %>
           <li class="create-movie">

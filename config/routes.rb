@@ -1,4 +1,5 @@
 Flix::Application.routes.draw do
+  root "movies#index"
   resources :genres
 
   get "sessions/new"
@@ -12,7 +13,13 @@ Flix::Application.routes.draw do
 
   resources :users
 
-  root "movies#index"
+  #%w(hits flops).each do |scope|
+  #  get "movies/filter/#{scope}", to: "movies#index",  as: "filtered_movies"
+  #  #get "movies/filter/flops", to: "movies#index", scope: 'flops'
+  #end
+
+  get "movies/filter/:scope", to: "movies#index", as: "filtered_movies"
+
   resources :movies do
   	resources :reviews
     resources :favourites

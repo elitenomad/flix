@@ -4,7 +4,18 @@ class MoviesController < ApplicationController
  # before_action :authorize_user, only: [:new,:create,:edit,:update,:destroy]
 
   def index
-    @movies = Movie.released
+    case(params[:scope])
+      when ("hits")
+        @movies = Movie.hits
+      when ("flops")
+        @movies = Movie.flops
+      when ("upcoming")
+        @movies = Movie.upcoming
+      when ("recent")
+        @movies = Movie.recent # default is 5
+      else
+        @movies = Movie.released
+    end
   end
 
   def show
