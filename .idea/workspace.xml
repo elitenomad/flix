@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1ed58d0-71ed-48b2-8e6c-57a85fc363df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/favourites_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/favourites_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/movie.rb" afterPath="$PROJECT_DIR$/app/models/movie.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/movies/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/movies/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/movies_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/movies_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="flix.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +61,16 @@
       <file leaf-file-name="movies_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/movies_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="2" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.4715447" vertical-offset="816" max-vertical-offset="1200">
+            <state line="71" column="5" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.63414633" vertical-offset="831" max-vertical-offset="1200">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/movies/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="29" selection-start="1323" selection-end="1327" vertical-scroll-proportion="-3.75" vertical-offset="615" max-vertical-offset="960">
               <folding />
             </state>
           </provider>
@@ -146,7 +150,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20140309095544_create_genres.rb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/models/genre.rb" />
-        <option value="$PROJECT_DIR$/app/views/movies/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/movies/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
@@ -159,6 +162,7 @@
         <option value="$PROJECT_DIR$/app/models/movie.rb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/favourites_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/movies/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/movies_controller.rb" />
       </list>
     </option>
@@ -975,11 +979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/movies/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.6086956" vertical-offset="420" max-vertical-offset="825" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="23" selection-start="53" selection-end="53" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="630">
@@ -1072,9 +1071,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/movies/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="29" selection-start="1323" selection-end="1327" vertical-scroll-proportion="-3.75" vertical-offset="615" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/movies_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="2" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.4715447" vertical-offset="816" max-vertical-offset="1200">
+        <state line="71" column="5" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.63414633" vertical-offset="831" max-vertical-offset="1200">
           <folding />
         </state>
       </provider>
